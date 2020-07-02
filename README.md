@@ -1,0 +1,2 @@
+# KanaBot
+ Discord Bot
