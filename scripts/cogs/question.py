@@ -1,5 +1,3 @@
-import discord
-import giphypop
 import random
 from discord.ext import commands
 

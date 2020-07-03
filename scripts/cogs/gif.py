@@ -1,4 +1,3 @@
-import discord
 import giphypop
 from discord.ext import commands
 

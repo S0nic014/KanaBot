@@ -1,6 +1,7 @@
-import discord
-import giphypop
+import logging
 from discord.ext import commands
+
+LOGGER = logging.getLogger(__name__)
 
 
 class AdminTool(commands.Cog):
@@ -9,7 +10,8 @@ class AdminTool(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print("Admin commands loaded.")
+        # print("Admin commands loaded.")
+        LOGGER.info("Admin commands loaded.")
 
     @commands.command()
     async def clear(self, ctx, amount=5):
