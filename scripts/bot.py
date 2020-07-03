@@ -1,9 +1,7 @@
 import discord
 import os
 from discord.ext import commands
-from scripts.ui import trayApp
-# import importlib
-# importlib.reload(trayApp)
+
 
 # Get token in user home path
 TOKKEN_PATH = os.path.join(os.path.expanduser("~"), "discordToken.txt")
@@ -39,7 +37,6 @@ for fileName in os.listdir("scripts/cogs"):
         kanaBot.load_extension(f"cogs.{fileName[:-3]}")
 
 
-# Run bot
-# kanaBot.run(getToken())
-# kanaBot.logout()
-tray = trayApp.runTray(kanaBot, getToken())
+if __name__ == "__main__":
+    # Run bot
+    kanaBot.run(getToken())
