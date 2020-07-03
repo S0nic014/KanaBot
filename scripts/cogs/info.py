@@ -21,7 +21,7 @@ class InfoTool(commands.Cog):
         await ctx.send(f"I'm {round(self.client.latency*1000)}ms slow uwu\n{giphypop.random_gif(tag='embarrassed')}")
 
     @commands.command()
-    async def kanaPfp(self, ctx):
+    async def avatar(self, ctx):
         await ctx.send("Drawing by: https://twitter.com/Yoaihime")
 
 

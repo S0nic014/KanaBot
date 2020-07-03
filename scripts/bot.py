@@ -1,10 +1,19 @@
 import discord
-import giphypop
 import os
 from discord.ext import commands
+from scripts.ui import trayApp
+# import importlib
+# importlib.reload(trayApp)
 
-
+# Get token in user home path
+TOKKEN_PATH = os.path.join(os.path.expanduser("~"), "discordToken.txt")
 kanaBot = commands.Bot(command_prefix=".")
+
+
+def getToken() -> str:
+    with open(TOKKEN_PATH) as tokenFile:
+        data = tokenFile.read()
+    return data
 
 
 # Extension commands
@@ -31,4 +40,6 @@ for fileName in os.listdir("scripts/cogs"):
 
 
 # Run bot
-kanaBot.run("NzI4MzY5MjE4NTI0OTM4MzUy.Xv5Yyg.CSuSZBbMs3-o-dkrO7bpefqFejw")
+# kanaBot.run(getToken())
+# kanaBot.logout()
+tray = trayApp.runTray(kanaBot, getToken())

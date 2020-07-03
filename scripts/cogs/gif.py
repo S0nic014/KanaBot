@@ -23,6 +23,14 @@ class GifManager(commands.Cog):
     async def mood(self, ctx):
         await ctx.send(giphypop.random_gif(tag="mood"))
 
+    @commands.command()
+    async def pokemon(self, ctx):
+        await ctx.send(giphypop.random_gif(tag="pokemon"))
+
+    @commands.command()
+    async def hamster(self, ctx):
+        await ctx.send(giphypop.random_gif(tag="hamster"))
+
 
 def setup(client):
     client.add_cog(GifManager(client))
